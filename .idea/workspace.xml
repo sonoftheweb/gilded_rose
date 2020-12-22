@@ -5,15 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c50afed1-59a2-4061-91d6-5d9e2e71943e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/js/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/EcLogin.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/EcRegister.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/EcStore.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/Shared/EcAlerts.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/Shared/EcHeader.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/plugins/vuetify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/router/router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/router/routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/sass/app.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/sass/variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/store/modules/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/store/modules/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/ecommerce_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ecommerce_app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,9 +38,19 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="SCSS File" />
+        <option value="HTML File" />
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -160,12 +187,20 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/js/sass" />
+      <recent name="$PROJECT_DIR$/resources/js/router" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -181,7 +216,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608528866234</updated>
-      <workItem from="1608528868306" duration="1857000" />
+      <workItem from="1608528868306" duration="4578000" />
+      <workItem from="1608575013753" duration="8000" />
+      <workItem from="1608603598824" duration="9038000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1608529506338</created>
@@ -197,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608529818017</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Published docker file to project root">
+      <created>1608530782941</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1608530782941</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +252,7 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Installed Passport" />
-    <option name="LAST_COMMIT_MESSAGE" value="Installed Passport" />
+    <MESSAGE value="Published docker file to project root" />
+    <option name="LAST_COMMIT_MESSAGE" value="Published docker file to project root" />
   </component>
 </project>

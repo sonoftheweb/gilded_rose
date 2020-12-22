@@ -1,41 +1,61 @@
-window._ = require('lodash');
+import  Vue from 'vue';
+import axios from 'axios';
+import Cookies from 'js-cookie';
+import store from './store/index';
+import moment from 'moment';
 
-/**
- * We'll load jQuery and the Bootstrap jQuery plugin which provides support
- * for JavaScript based Bootstrap features such as modals and tabs. This
- * code may be modified to fit the specific needs of your application.
- */
+const $eventBus = new Vue();
 
-try {
-    window.Popper = require('popper.js').default;
-    window.$ = window.jQuery = require('jquery');
+axios.defaults.baseURL = process.env.MIX_APP_URL;
+axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+axios.defaults.withCredentials = true;
 
-    require('bootstrap');
-} catch (e) {}
 
-/**
- * We'll load the axios HTTP library which allows us to easily issue requests
- * to our Laravel back-end. This library automatically handles sending the
- * CSRF token as a header based on the value of the "XSRF" token cookie.
- */
+axios.interceptors.request.use(config => {
+    $eventBus.$emit('toggle-loading', true);
 
-window.axios = require('axios');
+    if (Cookies.get('token')) {
+        config.headers.common['Authorization'] = 'Bearer ' + Cookies.get('token');
+    }
 
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+    return config;
+}, error => {
+    return Promise.reject(error);
+})
 
-/**
- * Echo exposes an expressive API for subscribing to channels and listening
- * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
- */
+axios.interceptors.response.use(response => {
+    // When a response is received, trigger hide loading
+    $eventBus.$emit('toggle-loading', false );
+    return response;
 
-// import Echo from 'laravel-echo';
+}, error => {
 
-// window.Pusher = require('pusher-js');
+    $eventBus.$emit('toggle-loading', false );
 
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: process.env.MIX_PUSHER_APP_KEY,
-//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
-//     forceTLS: true
-// });
+    let error_data = error.response.data;
+
+    if (error_data.hasOwnProperty('action_required')) {
+        // if the response is a 40* or an error and the response comes back with some data we can check for
+    } else {
+        if (error.response.status === 404) {
+            // not found page
+        }
+
+        if (error.response.status === 401 && error_data.message === 'Unauthenticated.') {
+            // 401 returned but no type defined, means user does not have access
+            store.dispatch('after_logout');
+            return;
+        }
+    }
+
+    $eventBus.$emit({
+        status: 'error',
+        message: error_data.hasOwnProperty('message') ? error_data.message : 'Unexpected error encountered. This issue has been logged.'
+    })
+
+    return Promise.reject(error)
+});
+
+Vue.prototype.$http = axios
+Vue.prototype.$eventBus = $eventBus
+Vue.prototype.$moment = moment
