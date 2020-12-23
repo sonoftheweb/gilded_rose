@@ -17,6 +17,11 @@ router.initialize = async () => {
             return router.push('/dashboard');
         }
 
+        if (store.getters.authenticated && !store.getters.user_data_ready) {
+            await store.dispatch('fetch_user_data')
+            return next()
+        }
+
         return next();
     });
 };

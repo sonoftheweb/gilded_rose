@@ -14,8 +14,8 @@ axios.defaults.withCredentials = true;
 axios.interceptors.request.use(config => {
     $eventBus.$emit('toggle-loading', true);
 
-    if (Cookies.get('token')) {
-        config.headers.common['Authorization'] = 'Bearer ' + Cookies.get('token');
+    if (Cookies.get('access_token')) {
+        config.headers.common['Authorization'] = 'Bearer ' + Cookies.get('access_token');
     }
 
     return config;

@@ -5,7 +5,11 @@
         <v-main>
             <v-container class="fill-height pa-0">
                 <transition name="fade" mode="out-in">
-                    <router-view></router-view>
+                    <v-layout>
+                        <v-flex xs12>
+                            <router-view></router-view>
+                        </v-flex>
+                    </v-layout>
                 </transition>
             </v-container>
         </v-main>

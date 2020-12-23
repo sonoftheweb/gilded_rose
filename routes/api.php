@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+
+Route::post('authentication', [\App\Http\Controllers\AuthenticationController::class, 'login']);
+
+Route::get('{resource}', [\App\Http\Controllers\ApiController::class, 'getCollection']);
+Route::get('{resource}/{id}', [\App\Http\Controllers\ApiController::class, 'getItem']);
+Route::post('{resource}/{id}', [\App\Http\Controllers\ApiController::class, 'updateItem']);
