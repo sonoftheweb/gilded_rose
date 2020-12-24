@@ -19,7 +19,7 @@ class Products extends BaseUseCase
      */
     public function purchase($id, $request): array
     {
-        if (auth()->guard('api')->guest()) {
+        if (auth()->guard('api')->guest()) { // we can build out this check in whatever framework we use as a helper file
             return [
                 'status' => 401,
                 'throwable' => new \Exception('You cannot purchase a product unless you are authenticated.', 401)
