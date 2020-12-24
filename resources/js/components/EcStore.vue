@@ -8,7 +8,7 @@
             <v-row v-if="products.length">
                 <v-col cols="12" md="3" sm="12" v-for="(product, index) in products" :key="index">
                     <v-card>
-                        <v-img :src="product.images[0].image"/>
+                        <v-img v-if="product.images.length" :src="product.images[0].image"/>
                         <v-card-text>
                             <v-layout>
                                 <v-flex sm6 md6>
@@ -63,6 +63,7 @@ export default {
                     message: 'You need to be logged in to purchase this item.'
                 });
                 this.$router.push('/login');
+                return;
             }
 
             this.$http.post(`/api/products/${item.id}?purchase`).then(response => {

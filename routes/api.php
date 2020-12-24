@@ -18,7 +18,8 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
-Route::post('authentication', [\App\Http\Controllers\AuthenticationController::class, 'login']);
+Route::post('authentication', [\App\Http\Controllers\AuthenticationController::class, 'login'])->name('authenticate.login');
+Route::delete('logout', [\App\Http\Controllers\AuthenticationController::class, 'logout'])->name('authenticate.logout');
 
 Route::get('{resource}', [\App\Http\Controllers\ApiController::class, 'getCollection']);
 Route::get('{resource}/{id}', [\App\Http\Controllers\ApiController::class, 'getItem']);

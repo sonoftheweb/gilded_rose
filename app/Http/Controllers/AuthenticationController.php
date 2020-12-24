@@ -8,6 +8,7 @@ use Hash;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use Laravel\Passport\Client;
+use Laravel\Passport\Http\Controllers\AccessTokenController;
 
 class AuthenticationController extends Controller
 {
@@ -42,8 +43,12 @@ class AuthenticationController extends Controller
         $token = $user->createToken($passwordGrantClient->name);
         return [
             'expires' => (int) Carbon::parse($token->token->expires_at)->fromNow(),
-            'access_token' => $token->accessToken,
-            'redirect' => '/dashboard'
+            'access_token' => $token->accessToken
         ];
+    }
+
+    public function logout()
+    {
+        auth()->guard('api')->user()->tokens()->delete();
     }
 }

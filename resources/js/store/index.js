@@ -62,7 +62,7 @@ export default new Vuex.Store({
             // We could use this bit to get data from the DB to further alter the experience of the store.
             // Things like translations and default color are part of those data.
             if (context.getters.authenticated && !context.getters.user_data_ready) {
-                context.dispatch('fetch_user_data').then(() => console.info('User info ready...'));
+                context.dispatch('fetch_user_data').then(() => context.commit('set_data_ready', true));
             }
         },
 
@@ -84,13 +84,15 @@ export default new Vuex.Store({
                 }
                 context.commit('put_settings_in_store', user_object);
                 context.commit('set_data_ready', true);
+            }).catch(e => {
+                context.dispatch('after_logout');
             })
         },
 
         async logout(context) {
             if (context.getters.authenticated) {
                 try {
-                    await axios.post('/api/auth/logout').then(() => {
+                    await axios.post('/api/logout').then(() => {
                         context.dispatch('after_logout');
                     });
                 } catch (e) {
@@ -109,9 +111,13 @@ export default new Vuex.Store({
     getters: {
         authenticated: (state) => state.authenticated,
         user_data_ready: (state) => state.data_ready,
-        user_id: (state) => state.id,
-        user_name: state => state.name,
+        user_id: (state) => state.user.id,
+        user_name: state => state.user.name,
         fully_authenticated: (state, getters) => getters.authenticated && getters.user_data_ready,
+        user_name_initials: (state, getters) => {
+            let initials = getters.user_name.replace(/[^a-zA-Z- ]/g, "").match(/\b\w/g);
+            return initials.join('');
+        },
         required_field_rule: (state, getters) => {
             return [
                 (v) => !!v || 'Field required.',

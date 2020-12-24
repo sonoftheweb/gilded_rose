@@ -5,30 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c50afed1-59a2-4061-91d6-5d9e2e71943e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Traits/ResponseTrait.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/UseCases/BaseUseCase.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/UseCases/Products.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/UseCases/Users.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repository/Eloquent/BaseRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repository/Eloquent/UserRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repository/EloquentRepositoryInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repository/UserRepositoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7389a27d-0599-4110-89b2-ccbc570b8707.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7389a27d-0599-4110-89b2-ccbc570b8707.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthenticationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthenticationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/UseCases/Products.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/UseCases/Products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/UserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/UserSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/EcLogin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/EcLogin.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/EcStore.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/EcStore.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/plugins/vuetify.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/plugins/vuetify.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Shared/EcHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Shared/EcHeader.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/store/modules/user.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,6 +185,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/js/sass" />
       <recent name="$PROJECT_DIR$/resources/js/router" />
@@ -218,7 +211,8 @@
       <workItem from="1608575013753" duration="8000" />
       <workItem from="1608603598824" duration="16517000" />
       <workItem from="1608642513272" duration="3002000" />
-      <workItem from="1608694439824" duration="13225000" />
+      <workItem from="1608694439824" duration="13652000" />
+      <workItem from="1608776045001" duration="9863000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1608529506338</created>
@@ -248,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608612706539</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Show products in no particular order and no pagination (keep it simple).&#10;Added controls to purchase items.&#10;Added authentication and made it native to laravel and vuex.&#10;Attached controls for purchasing items to custom method to fire purchased using the product update custom resource route.&#10;&#10;Refresh products once purchase has been made.">
+      <created>1608708140631</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608708140631</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +262,7 @@
     <MESSAGE value="Installed Passport" />
     <MESSAGE value="Published docker file to project root" />
     <MESSAGE value="Frontend (potentially decoupled) setup.&#10;Seeders and factories to setup initial data done." />
-    <option name="LAST_COMMIT_MESSAGE" value="Frontend (potentially decoupled) setup.&#10;Seeders and factories to setup initial data done." />
+    <MESSAGE value="Show products in no particular order and no pagination (keep it simple).&#10;Added controls to purchase items.&#10;Added authentication and made it native to laravel and vuex.&#10;Attached controls for purchasing items to custom method to fire purchased using the product update custom resource route.&#10;&#10;Refresh products once purchase has been made." />
+    <option name="LAST_COMMIT_MESSAGE" value="Show products in no particular order and no pagination (keep it simple).&#10;Added controls to purchase items.&#10;Added authentication and made it native to laravel and vuex.&#10;Attached controls for purchasing items to custom method to fire purchased using the product update custom resource route.&#10;&#10;Refresh products once purchase has been made." />
   </component>
 </project>

@@ -28,7 +28,7 @@ trait ResponseTrait
      * @param $statusCode
      * @return $this
      */
-    public function setStatusCode($statusCode): ResponseTrait
+    public function setStatusCode($statusCode)
     {
         $this->statusCode = $statusCode;
         return $this;

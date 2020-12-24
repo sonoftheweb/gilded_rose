@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use ReflectionException;
 
 class ApiController extends Controller
 {
@@ -43,7 +44,7 @@ class ApiController extends Controller
      * @param $resource
      * @param null $request
      * @return string[]
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function getResource($resource, $request = null): array
     {
@@ -107,13 +108,13 @@ class ApiController extends Controller
      * @param $resource
      * @param $id
      * @return JsonResponse
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function updateItem(Request $request, $resource, $id): JsonResponse
     {
         $resource = $this->getResource($resource, $request);
-        $message = $resource['use_case']->updateItem($resource, $id, $request);
+        $result = $resource['use_case']->updateItem($resource, $id, $request);
 
-        return $this->respondWithSuccessMessage(202, $message);
+        return ($result['status'] === 200) ? $this->respondWithSuccessMessage($result['status'], $result['message']) : $this->respondWithError($result['throwable']);
     }
 }

@@ -1,7 +1,7 @@
 <template>
     <v-app>
         <ec-alerts :alert-data="alertData"/>
-        <ec-header :is-authenticated="authenticated"/>
+        <ec-header/>
         <v-main>
             <v-container class="fill-height pa-0">
                 <transition name="fade" mode="out-in">
@@ -29,7 +29,7 @@ export default {
         }
     },
     computed: {
-        ...mapGetters(['authenticated', 'user_data_ready', 'user_id'])
+        ...mapGetters(['fully_authenticated', 'user_data_ready', 'user_id'])
     },
     methods: {
         changeTitle(route) {
